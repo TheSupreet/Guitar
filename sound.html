@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar1</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+        background: black;
+    }
+    
+    section {
+        border: 2px solid crimson;
+    }
+    
+    .image {
+        display: flex;
+        border: 2px solid black;
+        width: 50%;
+        /* background: rgb(193, 117, 221); */
+    }
+    
+    .Uimage {
+        display: flex;
+        border: 2px solid black;
+        width: 50%;
+        height: 390px;
+        /* background: rgb(193, 117, 221); */
+    }
+    
+    .Uimage#blur.active,
+    .image#blur.active {
+        filter: blur(20px);
+        pointer-events: none;
+        user-select: none;
+    }
+    
+    .popimg {
+        position: fixed;
+        transform: translate(-30%, -50%);
+        height: 200px;
+        top: 40px;
+        margin-top: 20px;
+        left: 90px;
+        width: 100%;
+        padding: 500px;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+        background: #fff;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    
+    .Upopimg {
+        position: fixed;
+        transform: translate(-30%, -50%);
+        height: 200px;
+        top: 40px;
+        margin-top: 20px;
+        left: 90px;
+        width: 100%;
+        padding: 500px;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+        background: #fff;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    
+    .close:berore {
+        width: 50px;
+        transform: translateX(506px);
+    }
+    
+    .Upopimg.active,
+    .popimg.active {
+        visibility: visible;
+        opacity: 1;
+        transition: 0.5s;
+        top: 50px;
+        width: 50px;
+        border: none;
+        background: transparent;
+    }
+    
+    .Ukelele.active,
+    .guitar.active {
+        visibility: visible;
+        opacity: 1;
+        transition: 0.5s;
+        top: 50px;
+    }
+    
+    button {
+        border-radius: 8px;
+        width: 150px;
+        height: 50px;
+        background: #10de17;
+        font-size: 25px;
+        margin-left: 150px;
+        margin-top: 2px;
+    }
+    
+    .string-btn {
+        position: relative;
+    }
+    
+    .string-btn button {
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+    }
+    
+    .Ubtn button {
+        border-radius: 50%;
+        height: 23px;
+        width: 23px;
+    }
+    
+    .string-btn #b1 {
+        position: relative;
+        top: -373px;
+        left: -36px;
+    }
+    
+    .string-btn #b2 {
+        position: relative;
+        top: -370px;
+        left: -36px;
+    }
+    
+    .string-btn #b3 {
+        position: relative;
+        top: -367px;
+        left: -36px;
+    }
+    
+    .string-btn #b4 {
+        position: relative;
+        top: -364px;
+        left: -36px;
+    }
+    
+    .string-btn #b5 {
+        position: relative;
+        top: -362px;
+        left: -36px;
+    }
+    
+    .string-btn #b6 {
+        position: relative;
+        top: -361px;
+        left: -36px;
+    }
+    
+    .Ubtn #b1 {
+        position: relative;
+        top: -214.5px;
+        left: -110px;
+    }
+    
+    .Ubtn #b2 {
+        position: relative;
+        top: -214.5px;
+        left: -110px;
+    }
+    
+    .Ubtn #b3 {
+        position: relative;
+        top: -214.5px;
+        left: -110px;
+    }
+    
+    .Ubtn #b4 {
+        position: relative;
+        top: -214.5px;
+        left: -110px;
+    }
+</style>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <section class="guitar">
+                    <div class="image" id="blur">
+                        <img src="/img/img1.png" alt="Guitar"></div>
+                    <button id="blur" class="close" onclick=" toggle() ">Here</button>
+
+                    <div class="popimg" id="popimg">
+                        <img src="/img/popimg.png " alt="guitar-image ">
+                        <button class="close" onclick="toggle()">close</button>
+
+                        <div class="string-btn">
+                            <div id="b1"><button style="font-size: 10px" id="ebtn">E</button></div>
+                            <div id="b2"><button style="font-size: 10px" id="abtn">A</button></div>
+                            <div id="b3"><button style="font-size: 10px" id="dbtn">D</button></div>
+                            <div id="b4"><button style="font-size: 10px" id="gbtn">G</button></div>
+                            <div id="b5"><button style="font-size: 10px" id="bbtn">B</button></div>
+                            <div id="b6"><button style="font-size: 10px" id="e2btn">E</button></div>
+                        </div>
+                    </div>
+                </section>
+            </td>
+            <td>
+                <section class="Ukelele">
+                    <div class="Uimage" id="Ublur">
+                        <img src="/img/uklele-removebg-preview.png" alt="ukele image"></div>
+                    <button id="Ublur" class="Ubutton" onclick="togle()">Here</button>
+
+
+                    <div class="Upopimg" id="Upopimg">
+                        <img src="/img/ukele-board-removebg-preview.png" alt="ukele board">
+                        <button class="close" onclick="togle()">close</button>
+                        <div class="Ubtn">
+                            <div id="b1"><button style="font-size: 10px" id="Ugbtn">G</button></div>
+                            <div id="b2"><button style="font-size: 10px" id="Ucbtn">C</button></div>
+                            <div id="b3"><button style="font-size: 10px" id="Uebtn">E</button></div>
+                            <div id="b4"><button style="font-size: 10px" id="Uabtn">A</button></div>
+                        </div>
+                    </div>
+                </section>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+    <div class="audio">
+        <!-- //guitar audios------- -->
+        <audio id="audio-e" src="/audio/E-String.mp3"></audio>
+        <audio id="audio-a" src="/audio/A-String.mp3"></audio>
+        <audio id="audio-d" src="/audio/D-String.mp3"></audio>
+        <audio id="audio-g" src="/audio/G-string.mp3"></audio>
+        <audio id="audio-b" src="/audio/B-String.mp3"></audio>
+        <audio id="audio-e2" src="/audio/E6-String.mp3"></audio>
+
+        <!-- //Ukelele Chords -->
+        <audio id="audio-Ug" src="/audio/U-Gstring.mp3"></audio>
+        <audio id="audio-Uc" src=" /audio/U-Cstring.mp3 "></audio>
+        <audio id="audio-Ue" src=" /audio/U-Estring.mp3 "></audio>
+        <audio id="audio-Ua" src="/audio/U-Astring.mp3 "></audio>
+    </div>
+
+    <script>
+        // For Guitar
+
+        function toggle() {
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active');
+            var popimg = document.getElementById('popimg');
+            popimg.classList.toggle('active');
+        }
+
+
+
+        var audioE = document.getElementById('audio-e');
+        var audioA = document.getElementById('audio-a');
+        var audioD = document.getElementById('audio-d');
+        var audioG = document.getElementById('audio-g');
+        var audioB = document.getElementById('audio-b');
+        var audioE2 = document.getElementById('audio-e2');
+
+        var buttonE = document.getElementById('ebtn');
+        var buttonA = document.getElementById('abtn');
+        var buttonD = document.getElementById('dbtn');
+        var buttonG = document.getElementById('gbtn');
+        var buttonB = document.getElementById('bbtn');
+        var buttonE2 = document.getElementById('e2btn');
+
+        buttonE.addEventListener('click', function() {
+            if (audioE.paused) {
+                audioE.play();
+
+            } else {
+                audioE.pause();
+
+            }
+        });
+
+        buttonA.addEventListener('click', function() {
+            if (audioA.paused) {
+                audioA.play();
+            } else {
+                audioA.pause();
+            }
+        });
+
+        buttonD.addEventListener('click', function() {
+            if (audioD.paused) {
+                audioD.play();
+            } else {
+                audioD.pause();
+            }
+        });
+
+        buttonG.addEventListener('click', function() {
+            if (audioG.paused) {
+                audioG.play();
+            } else {
+                audioG.pause();
+            }
+        });
+
+        buttonB.addEventListener('click', function() {
+            if (audioB.paused) {
+                audioB.play();
+            } else {
+                audioB.pause();
+            }
+        });
+
+        buttonE2.addEventListener('click', function() {
+            if (audioE2.paused) {
+                audioE2.play();
+            } else {
+                audioE2.pause();
+            }
+        });
+
+
+
+        //For Ukele
+        function togle() {
+            var blur = document.getElementById('Ublur');
+            blur.classList.toggle('active');
+            var popimg = document.getElementById('Upopimg');
+            popimg.classList.toggle('active');
+        }
+
+
+
+        var Uaudiog = document.getElementById('audio-Ug');
+        var Uaudioc = document.getElementById('audio-Uc');
+        var Uaudioe = document.getElementById('audio-Ue');
+        var Uaudioa = document.getElementById('audio-Ua');
+
+
+        var Ubuttong = document.getElementById('Ugbtn');
+        var Ubuttonc = document.getElementById('Ucbtn');
+        var Ubuttone = document.getElementById('Uebtn');
+        var Ubuttona = document.getElementById('Uabtn');
+
+
+        Ubuttong.addEventListener('click', function() {
+            if (Uaudiog.paused) {
+                Uaudiog.play();
+
+            } else {
+                Uaudiog.pause();
+
+            }
+        });
+
+        Ubuttonc.addEventListener('click', function() {
+            if (Uaudioc.paused) {
+                Uaudioc.play();
+            } else {
+                Uaudioc.pause();
+            }
+        });
+
+        Ubuttone.addEventListener('click', function() {
+            if (Uaudioe.paused) {
+                Uaudioe.play();
+            } else {
+                Uaudioe.pause();
+            }
+        });
+
+        Ubuttona.addEventListener('click', function() {
+            if (Uaudioa.paused) {
+                Uaudioa.play();
+            } else {
+                Uaudioa.pause();
+            }
+        });
+    </script>
+</body>
+
+</html>
