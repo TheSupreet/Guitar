@@ -1,12 +1,12 @@
-## Guitar
+# Guitar
 
 Overview
 Guitar Info Hub is a comprehensive website that provides detailed information about guitars, ukuleles, 4-string bass guitars, and 5-string bass guitars. Additionally, it offers insights into the unique sounds produced by different guitar and ukulele strings. Whether you are a beginner or an experienced musician, this website is a valuable resource for all things related to these instruments.
 
-## Live Demo
+# Live Demo
 You can experience the website live by visiting: [Guitar](https://thesupreet.github.io/Guitar/).
 
-# #Usage
+# Usage
 Guitar is designed with user-friendliness in mind. Here's how to use the website:
 
 Upon landing on the home page, you'll find a brief introduction to the website's purpose and contents.
