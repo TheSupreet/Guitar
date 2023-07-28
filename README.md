@@ -20,3 +20,8 @@ HTML
 CSS
 JavaScript
 Tailwind CSS
+
+# see the sight looks like
+![g1](https://github.com/TheSupreet/Guitar/assets/119513422/6deb7c37-4b61-4bc9-8fc8-2eaa33acf7af)
+![g2](https://github.com/TheSupreet/Guitar/assets/119513422/ab924b36-1fc6-4f8f-b14a-29976d9c9af3)
+
