@@ -226,3 +226,74 @@ footer {
         text-decoration: underline;
 
     }
+
+@media (max-width: 576px) {
+    .settings {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .settings label {
+        margin: 5px 0;
+    }
+
+    .settings input[type="number"] {
+        width: auto;
+        max-width: 60px;
+    }
+
+    .accidental-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .fretboard {
+        min-width: 100%;
+        margin-top: 10px;
+        padding: 10px 0;
+        overflow-x: auto;
+    }
+
+    .string {
+        overflow-x: auto;
+    }
+
+    .note-fret {
+        border-right: 4px solid;
+        padding: 2px;
+    }
+
+    .note-fret:first-child {
+        min-width: 30px;
+        border-right: 6px solid;
+    }
+
+    .note-fret:before {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 1.2em;
+    }
+
+    .single-fretmark:after,
+    .double-fretmark:before,
+    .double-fretmark:after {
+        height: 15px;
+        width: 15px;
+    }
+
+    .note-name-section {
+        font-size: 1.5em;
+    }
+
+    .button button {
+        transform: translateX(0);
+        margin-top: 20px;
+        height: 50px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
