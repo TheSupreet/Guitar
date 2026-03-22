@@ -1,51 +1,114 @@
-<!DOCTYPE html>
-<html lang="en" <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="styles.css">
-<title>Guitar</title>
-</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Guitar — Fretboard</title>
+  </head>
 
-<body>
-    <div class="settings">
-        <label for="instrument-selector">Selected instrument:</label>
-        <select name="instrument-selector" id="instrument-selector"></select>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <h1 class="site-title">Guitar fretboard</h1>
+        <p class="site-tagline">
+          Pick an instrument, flats or sharps, and explore the neck.
+        </p>
+      </div>
+    </header>
 
-        <div class="accidental-selector">
-
-            <input type="radio" class="acc-select" id="flats" name="accidentals" value="flats" checked>
-            <label for="flats">♭(Flat-notes)</label>
-            <input type="radio" class="acc-select" id="sharps" name="accidentals" value="sharps">
-            <label for="flats">♯(Sharp-notes)</label>
+    <main class="main">
+      <section class="panel settings" aria-label="Fretboard options">
+        <div class="settings__row settings__row--top">
+          <div class="field">
+            <label for="instrument-selector">Instrument</label>
+            <select
+              name="instrument-selector"
+              id="instrument-selector"
+            ></select>
+          </div>
+          <fieldset class="field field--radios accidental-selector">
+            <legend>Note names</legend>
+            <div class="radio-group">
+              <input
+                type="radio"
+                class="acc-select"
+                id="flats"
+                name="accidentals"
+                value="flats"
+                checked
+              />
+              <label for="flats">♭ Flats</label>
+              <input
+                type="radio"
+                class="acc-select"
+                id="sharps"
+                name="accidentals"
+                value="sharps"
+              />
+              <label for="sharps">♯ Sharps</label>
+            </div>
+          </fieldset>
         </div>
-        <label for="number-of-frets">Number of frets: </label>
-        <input type="number" id="number-of-frets" min="5" max="30" value="20">
-        <div class="label">
-            <label for="show-all-notes">Show all notes: </label>
-            <input type="checkbox" id="show-all-notes">
+        <div class="settings__row settings__row--mid">
+          <div class="field">
+            <label for="number-of-frets">Frets</label>
+            <input
+              type="number"
+              id="number-of-frets"
+              min="5"
+              max="30"
+              value="20"
+              aria-describedby="frets-hint"
+            />
+            <span id="frets-hint" class="field-hint">5–30</span>
+          </div>
+          <div class="field field--checks">
+            <label class="check">
+              <input type="checkbox" id="show-all-notes" />
+              <span>Show all notes</span>
+            </label>
+            <label class="check">
+              <input type="checkbox" id="show-multiple-notes" />
+              <span>Multiple notes</span>
+            </label>
+          </div>
+        </div>
+      </section>
 
-            <label for="show-multiple-notes">Show multiple notes: </label>
-            <input type="checkbox" id="show-multiple-notes">
-
+      <div class="content-wrap">
+        <div class="fretboard-wrap">
+          <div class="fretboard" role="presentation"></div>
         </div>
 
-    </div>
-    <div class="fretboard"></div>
+        <div class="note-name-section" aria-live="polite"></div>
 
-    <div class="note-name-section"></div>
-    <div class="button">
-        <a href="sound.html"><button class="btn"><span>Here The Sound</span></button></a>
-         <br>
-        <br>
-        <br>
-        <br>
-    </div>
-    <script src="str.js"></script>
-</body>
-<footer>
+        <div class="cta">
+          <a href="sound.html" class="btn btn--primary">Hear the strings</a>
+        </div>
+      </div>
+    </main>
 
-        <span>Created By <a href="https://www.linkedin.com/in/supreet-kurdekar-82b3ba242">Supreet Kurdekar</a> | <span class="far fa-copyright "></span> 2023 All rights reserved.</span>
-
+    <footer class="site-footer">
+      <p>
+        Created by
+        <a
+          href="https://www.linkedin.com/in/supreet-kurdekar-82b3ba242"
+          rel="noopener noreferrer"
+          target="_blank"
+          >Supreet Kurdekar</a
+        >
+        · © 2023
+      </p>
     </footer>
+
+    <script src="str.js"></script>
+  </body>
 </html>
